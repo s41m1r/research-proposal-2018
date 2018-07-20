@@ -1,0 +1,118 @@
+% For language-specific hyphenations etc.
+%\usepackage[english]{babel}
+% For subfigures
+\usepackage{subcaption}
+% For nice links
+%\usepackage{url}
+% For playing with colors in tabular environments
+\usepackage{colortbl}
+% For math symbols, such as \nexists
+\usepackage{amssymb}
+% For more math symbols, such as \mapsfrom
+\usepackage{stmaryrd}
+% For advanced graphics
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+% For equations, arrays of equations, defining operator names, etc.
+\usepackage{amsmath}
+% For cursive math
+%\usepackage{mathrsfs}
+% For math symbols, such as \nexists
+\usepackage{amssymb}
+%% For math environments, such as "definition"
+\usepackage{amsthm}
+%\theoremstyle{definition}
+%\newdefinition{definition}{Definition}[section]
+%\newtheorem{theorem}{Theorem}[section]
+% For enumerating the line numbers
+\usepackage[left]{lineno}
+% For side notes, missing figures and inline to-do's
+\usepackage[textsize=scriptsize,backgroundcolor=orange!50]{todonotes}
+% For specifying kewords and acronyms
+\usepackage[nonumberlist,acronym,sanitize=none]{glossaries}
+\glsdisablehyper
+% For commenting out some parts of the text
+\usepackage{comment}
+% For building hyperlinks
+\usepackage[pdftex, colorlinks=true, hyperfootnotes=true, hyperindex=true,
+plainpages=false, pagebackref=false, pdfpagelabels=true, pdfstartview=FitH,
+linkcolor=blue, citecolor=blue, urlcolor=blue,
+bookmarks, bookmarksopen, bookmarksdepth=3]{hyperref}
+\urlstyle{same}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+	\errmessage{\noexpand\@combinedblfloats could not be patched}%
+}%
+\makeatother
+
+% For smart references
+\usepackage{cleveref}
+% To have "Figure 3(a)" in place of "Figure 3a" and  "Table 3(a)" in place of "Table 3a"
+%\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+%    \renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[subtable]{subrefformat=simple,labelformat=simple}
+    \renewcommand\thesubtable{(\alph{subtable})}
+\Crefname{algocf}{Algorithm}{Algorithms}
+% TikZ/Pgf advanced graphics
+\usepackage{tkz-base}
+\usetikzlibrary{decorations.pathmorphing,trees,snakes,arrows,shapes,automata}
+% To use inline and other fancy list-like environments (e.g., inparaenum)
+\usepackage{paralist}
+% To divide a text line into multiple columns
+\usepackage{multicol}
+% To create good-looking book-style tables
+\usepackage{booktabs}
+% To play around with list environments
+\usepackage{enumitem}
+% To create multirow cells in tables
+\usepackage{multirow}
+% To create rotated cells in tables
+\usepackage{rotating}
+% To specify properties of tables
+\usepackage{array}
+% To create enumerated lists, whose numbering is reversed
+\usepackage{etaremune}
+%% To make algorithmic nice-looking pseudocode
+\usepackage[ruled,linesnumbered]{algorithm2e}
+%% For creating side-notes
+% \usepackage{marginnote}
+% For superimposing symbols over one another within math env.
+\usepackage{mathtools}
+% For strange math symbols like \Dashv
+\usepackage{mathabx}
+% For LaTeX if/then statements
+\usepackage{ifthen}
+% For strike-through cancellations
+\usepackage[normalem]{ulem}
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+
+\usepackage{booktabs}
+% \usepackage{graphicx}
+%\useunder{\uline}{\ul}{}
+\usepackage{lscape}
+
+\usepackage{lineno}
+% For highlighted text
+\usepackage{soul}
+% To put table environments and co. side by side
+%\usepackage{floatrow}
+%\floatsetup[table]{style=plaintop}
+% To add dummy text
+\usepackage{lipsum}
+% To have newlines in cells, with commands such as \makecell or \thead
+\usepackage{makecell}
+% To enable text protrusion
+\usepackage[protrusion=true,expansion=true]{microtype}
+%% PACKAGE TO INCLUDE A PDF FILE
+\usepackage{pdfpages}
+%% PACKAGE FOR THE HEADERS AND FOOTERS
+\usepackage{fancyhdr}
+%\usepackage[a-1a]{pdfx}
+% theorem tools
+\usepackage{thmtools}
+%
+\usepackage{float}

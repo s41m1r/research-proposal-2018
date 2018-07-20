@@ -1,0 +1,23 @@
+\RequirePackage{rotating}
+
+\newcommand{\sidewaysheader}[1]{\begin{sideways}{#1}\end{sideways}}
+\newcommand{\sidewaysheaderpar}[2]{\begin{sideways}\parbox{#1}{\centering #2}\end{sideways}}
+
+\RequirePackage{paralist}
+
+\newenvironment{iiilist}%
+{\begin{inparaenum}[\itshape(i)\upshape]}%
+{\end{inparaenum}}
+
+\RequirePackage{colortbl}
+
+\newcommand{\grayrow}{\rowcolor{gray!20}} %
+\newcommand{\lightgrayrow}{\rowcolor{gray!10}} %
+\newcommand{\graycell}{\cellcolor{gray!30}} %
+
+<<<<<<< HEAD
+\RequirePackage{todonotes}
+\newcommand{\todoinline}[1]{\todo[inline]{#1}}
+=======
+ 
+>>>>>>> 53fc96b7beb55320add74ab2a9a39694382559cd

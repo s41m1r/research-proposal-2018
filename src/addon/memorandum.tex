@@ -1,0 +1,80 @@
+% !TeX root = ../main.tex
+%
+\section*{For us authors: some tips and tricks}
+\label{sec:memo}
+%%%
+%%% Start of: preliminary commands to be used exclusively in this file.
+%%%
+\newglossaryentry{test}{name={test},description={A fictionary test}}
+\newacronym{testacro}{TA}{Test Acronym}
+%%%
+%%% End of: preliminary commands to be used exclusively in this file.
+%%%
+%
+% --------------------------------
+% About comments
+% --------------------------------
+%
+\hl{For your comments}, please use the
+\todo[inline]{\texttt{todo} environment, either in-line or }
+or aside.
+\todo{aside}
+%
+You can even add missing figures with the \verb|\missingfigure| command (see \cref{fig:example:missing:figure}).
+\begin{figure}[b]
+\missingfigure{\texttt{{\textbackslash}missingfigure} command}
+\caption{A missing figure}
+\label{fig:example:missing:figure}
+\end{figure}
+%
+\\
+%
+% --------------------------------
+% About inline lists
+% --------------------------------
+%
+\hl{For lowercase-roman-enumerated inline lists}, please use
+\begin{iiilist}
+\item the
+\item \texttt{iiilist}
+\item environment.
+\end{iiilist}
+It is a custom command you find in \verb|addons/commands.tex|. It is based on the \verb|\inparaenum| command, from package \textit{paralist}.
+%
+\\
+%
+% --------------------------------
+% About keywords
+% --------------------------------
+%
+\hl{For specific terms}, which may change in the future, add a \hl{glossary} entry in \texttt{addons/glossary.tex},
+and use
+\begin{iiilist}
+\item the \texttt{gls} command to use them (e.g., \gls{test}),
+\item the \texttt{Gls} command for capitalising them (e.g., \Gls{test}),
+\item the \texttt{glspl} command for obtaining their plural form (e.g., \glspl{test}), and
+\item the \texttt{Glspl} command for for obtaining their plural capitalised form (e.g., \Glspl{test}).
+\end{iiilist}
+It turns out to be very useful in those situations in which the co-authors do not remember, for example, whether they should indicate the sequences of executed actions as ``traces'' or ``runs''. To solve the issue and avoid that all co-authors write different things, they can decide on a temporary solution (say, ``traces''), make it a glossary entry (say, \verb+\newglossaryentry{actx}{name={trace},description={...}}+), use \verb+\gls{actx}+ (or similar commands -- see above) every time they want to say that thing, and when the opinion on the best term will change (in favour of ``runs''), it will be enough to change the glossary entry definition (\verb+\newglossaryentry{actxeq}{name={run},description={...}}+) and see it varied everywhere it was used in the text. Another use case is: ``AB Testing'' or ``AB testing''? To avoid that the ``T''s of ``testing'' occur as upper-case sometimes, and as lower-case at times, a single glossary entry comes handy!
+%
+\\
+%
+\hl{For acronyms}, they are meant be defined within the same file as follows: \texttt{{\textbackslash}newacronym\{testacro\}\{TA\}\{Test Acronym\}}.
+They can be referenced by using \texttt{{\textbackslash}Gls} (plus variants for plural forms etc.).
+Result is, you get the full version the first time the acronym is used
+-- \texttt{{\textbackslash}gls\{testacro\}} is displayed as \Gls{testacro}.
+From the second time onwards, the call will return the acronym only, without any description:
+\texttt{{\textbackslash}gls\{testacro\}} is displayed as \Gls{testacro}.
+To force the representation to have either long or short versions, use
+\texttt{{\textbackslash}acrlong\{testacro\}}
+(leading to \acrlong{testacro})
+or
+\texttt{{\textbackslash}acrshort\{testacro\}}
+(displaying \acrshort{testacro}).
+Acronyms are collected in \texttt{addons/glossary.tex} too.
+%
+\\
+%
+\hl{To refer to sections, tables, figures, etc.}, please use the \texttt{cref} command (e.g., \cref{sec:memo}).
+\texttt{Cref} capitalises and expands the specifier of the referred document part (e.g., \Cref{fig:example:missing:figure}). It is best to be used at the beginning of phrases, whereas \texttt{cref} uses the abbreviation (e.g., \cref{fig:example:missing:figure}).
+%

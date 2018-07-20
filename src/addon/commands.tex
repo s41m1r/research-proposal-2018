@@ -1,0 +1,62 @@
+\RequirePackage{rotating}
+
+\newcommand{\sidewaysheader}[1]{\begin{sideways}{#1}\end{sideways}}
+\newcommand{\sidewaysheaderpar}[2]{\begin{sideways}\parbox{#1}{\centering #2}\end{sideways}}
+
+\RequirePackage{paralist}
+
+\newenvironment{iiilist}%
+{\begin{inparaenum}[\itshape(i)\upshape]}%
+{\end{inparaenum}}
+
+\RequirePackage{colortbl}
+
+\newcommand{\grayrow}{\rowcolor{gray!20}} %
+\newcommand{\lightgrayrow}{\rowcolor{gray!10}} %
+\newcommand{\graycell}{\cellcolor{gray!30}} %
+\newcommand{\graytext}{\color[HTML]{606060}} %
+
+\RequirePackage{todonotes}
+\newcommand{\todoinline}[1]{\todo[inline]{#1}}
+
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			%\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{background.pdf}%
+			\vfill
+}}}
+\fancyhf{}% Clear all headers/footers
+\fancyhead[R]{\includegraphics{wu_top.png}}
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{0pt}% No footer rule
+\fancyfoot[L]{\hspace*{0mm}\includegraphics[scale=0.3]{logoDepartment.pdf}}
+
+\newcommand*\rot{\rotatebox{90}}
+
+
+\declaretheoremstyle[spaceabove=\topsep, spacebelow=\topsep,
+headfont=\bfseries,
+shaded={rulecolor=black, bgcolor={rgb}{1,1,1}},
+numbered=no,
+mdframed={
+	leftmargin=2em,
+	rightmargin=2em,
+topline=false,
+bottomline=false,
+leftline=false,
+rightline=false},
+notefont=\mdseries,
+bodyfont=\normalfont,
+postheadspace=\newline,
+headpunct=,
+postheadhook=\leavevmode%
+\interlinepenalty 10000%
+\vskip-1.3\baselineskip%
+\noindent{\rule{\textwidth}{1pt}}%
+\interlinepenalty 10000%
+\vskip0.3\baselineskip\noindent,
+qed=\textcolor{black}{$\blacksquare$}]{example-style}
+
+\declaretheorem[style=example-style]{example}

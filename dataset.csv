@@ -1,0 +1,7 @@
+Log,Description
+SHAPE,Industry \gls{vcs} from software development in the railway domain
+Github,Logs from real world \gls{oss} development
+Github pull requests,Manually annotated pull requests from one real life open source project
+Jira,Log data from \gls{its} from industry partner
+Asana,Generated dataset from project management tool of industrial partner
+Kibana,Event traces from distributed process-agnostic enviroment used to handle communication among several processes 
